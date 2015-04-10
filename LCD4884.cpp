@@ -334,6 +334,8 @@ void LCD4884::browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction)
 {
     static unsigned long int timer = 0;
 
+    updateButtonStatus();
+
     if(millis() - timer > TIMEBACKLIGHT)
     {
         turnBacklightOn(false);
