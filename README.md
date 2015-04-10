@@ -17,7 +17,7 @@ To show the menu on the screen:
 
 ```lcd.showMenu(menuList) ```
 
-To browse the menu with the button:
+To browse the menu with the buttons:
 
 ```void browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction) ```
 
