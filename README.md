@@ -1,6 +1,8 @@
 # LCD4884
 Library for LCD4884 shield - Arduino
 
+[Visit the Article on my Blog !](http://horloge-skynet.weebly.com/arduino/lcd4884-shield)
+
 ======
 
 ### How to use it
