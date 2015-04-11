@@ -411,7 +411,11 @@ void LCD4884::browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction)
                     if(millis() - timer < TIMELONGPRESS)
                     {
                         clear();
+
                         (*menuFunction[current_menu_item])();
+
+                        waitOKkey();
+                        
                         showMenu(menuList);
                         i = NUM_KEYS;
                     }
