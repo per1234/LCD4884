@@ -406,6 +406,7 @@ void LCD4884::browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction)
                     {
                         clear();
                         (*menuFunction[current_menu_item])();
+                        timer = millis();
                         showMenu(menuList);
                         i = NUM_KEYS;
                     }
