@@ -40,4 +40,4 @@ You can use also these methods:
 
 ## Notes
 * With this configuration, you have the Name of your project written centered at the top of the screen, and access to 4 submenus.
-* Wanna use a long press on CENTER_KEY ? Use ```getLongPress() ``` to reach the status of last pression.
+* Wanna use a long press on *CENTER_KEY* ? Use ```getLongPress() ``` to reach the status of last pression.
