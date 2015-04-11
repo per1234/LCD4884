@@ -59,6 +59,8 @@ class LCD4884
         void waitOKkey(void);
         void updateButtonStatus(void);
         char getKey(unsigned int input);
+        
+        bool getLongPress();
 
         void initClass(char *name, int maxElements, int minElements = 0);
         void showMenu(char menuList[][NBCHAR_X]);
@@ -69,7 +71,7 @@ class LCD4884
 
     private:
 
-        bool center_key;
+        bool longPress;
         short int button_count[NUM_KEYS];
         short int button_status[NUM_KEYS];
         short int button_flag[NUM_KEYS];
