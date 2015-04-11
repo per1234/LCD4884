@@ -155,7 +155,7 @@ void LCD4884::writeChar(unsigned char c, char mode)
     for(line = 0; line < 6; line++)
     {
         ch = pgm_read_byte(pFont + c * 6 + line);
-        writeByte((mode==MENU_NORMAL) ? ch : (ch ^ 0xff), 1);
+        writeByte((mode == MENU_NORMAL) ? ch : (ch ^ 0xff), 1);
     }
 }
 
