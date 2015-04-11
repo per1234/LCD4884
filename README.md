@@ -32,7 +32,8 @@ You can use also these methods:
 ```writeStringBig(posX, posY, string[digit], MENU_NORMAL / MENU_HIGHLIGHT)```  
 ```writeChar(posX, posY, char, MENU_NORMAL / MENU_HIGHLIGHT)```  
 ```writeCharBig(posX, posY, char[digit], MENU_NORMAL / MENU_HIGHLIGHT)```  
-```clear(void) ```
+```clear(void) ```  
+```init(void) ``` (to initialize the screen without menu or buttons operation)
 
 
 ======
