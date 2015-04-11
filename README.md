@@ -6,19 +6,17 @@ Library for LCD4884 shield - Arduino
 ### How to use it
 
 
-Please consider starting write down your information in the header of the example.
+Please consider starting write down your information in the header of the example.  
+Now, complete the body of functions declared at the bottom, with the content you wish.  
+When you'll choose the entry in the menu, this content will be executed.  
 
-
-To initialize the Class:
-
+To initialize the Class:  
 ```lcd.initClass(projectName, NUM_MENU_ITEM) ```
 
-To show the menu on the screen:
-
+To show the menu on the screen:  
 ```lcd.showMenu(menuList) ```
 
-To browse the menu with the buttons:
-
+To browse menu with the buttons:  
 ```void browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction) ```
 
 
@@ -27,16 +25,11 @@ To browse the menu with the buttons:
 
 You can use also these methods:
 
-`turnBacklightOn(true / false)`
-
-`writeString(posX, posY, string, MENU_NORMAL / MENU_HIGHLIGHT)`
-
-`writeStringBig(posX, posY, string[digit], MENU_NORMAL / MENU_HIGHLIGHT)`
-
-`writeChar(posX, posY, char, MENU_NORMAL / MENU_HIGHLIGHT)`
-
-`writeCharBig(posX, posY, char[digit], MENU_NORMAL / MENU_HIGHLIGHT)`
-
+`turnBacklightOn(true / false)`  
+`writeString(posX, posY, string, MENU_NORMAL / MENU_HIGHLIGHT)`  
+`writeStringBig(posX, posY, string[digit], MENU_NORMAL / MENU_HIGHLIGHT)`  
+`writeChar(posX, posY, char, MENU_NORMAL / MENU_HIGHLIGHT)`  
+`writeCharBig(posX, posY, char[digit], MENU_NORMAL / MENU_HIGHLIGHT)`  
 `clear(void)`
 
 
@@ -44,5 +37,5 @@ You can use also these methods:
 ======
 
 ## Notes
-* Wanna configure a long press on CENTER_KEY ? Go to Line **413** of *.cpp*.
+* Wanna configure a long press on CENTER_KEY ? Go to Line **415** of *.cpp*.
 * With this configuration, you have the Name of your project written centered at the top of the screen, and access to 4 submenus.
