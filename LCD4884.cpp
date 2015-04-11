@@ -321,7 +321,7 @@ void LCD4884::showMenu(char menuList[][NBCHAR_X])
     clear();
     writeString(CENTER(menuName), 0, menuName, MENU_NORMAL);
 
-    for(short int i = 0; i < max_menu_item - min_menu_item + 1; i++)
+    for(short int i = 0; i <= max_menu_item - min_menu_item; i++)
     {
         writeString(CENTER(menuList[i]), OFFSET_Y + i, menuList[i], MENU_NORMAL);
     }
