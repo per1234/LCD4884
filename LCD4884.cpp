@@ -13,6 +13,8 @@ LCD4884::LCD4884()
     }
 
     center_key = false;
+
+    menuName = NULL;
 };
 
 LCD4884::~LCD4884()
