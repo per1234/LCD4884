@@ -12,7 +12,7 @@ LCD4884::LCD4884()
         button_flag[i] = 0;
     }
 
-    center_key = false;
+    longPress = false;
 };
 
 LCD4884::~LCD4884()
@@ -297,6 +297,12 @@ void LCD4884::updateButtonStatus(void)
 }
 
 
+bool LCD4884::getLongPress()
+{
+    return longPress;
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -402,19 +408,20 @@ void LCD4884::browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction)
 
                     } while(button_status[CENTER_KEY] != 0 && millis() - timer < TIMELONGPRESS);
 
-                    if(millis() - timer < TIMELONGPRESS) //Short Press
+                    if(millis() - timer < TIMELONGPRESS)
                     {
                         clear();
                         (*menuFunction[current_menu_item])();
-                        timer = millis();
                         showMenu(menuList);
                         i = NUM_KEYS;
                     }
 
-                    else //Long Press
+                    else
                     {
-                        //Possibility...
+                        longPress = true;
                     }
+
+                    timer = millis();
                     break;
 
                 default:
