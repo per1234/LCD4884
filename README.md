@@ -37,5 +37,5 @@ You can use also these methods:
 ======
 
 ## Notes
-* Wanna configure a long press on CENTER_KEY ? Go to Line **415** of *.cpp*.
 * With this configuration, you have the Name of your project written centered at the top of the screen, and access to 4 submenus.
+* Wanna use a long press on CENTER_KEY ? Use `getLongPress()` to reach the status of last pression.
