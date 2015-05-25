@@ -30,6 +30,7 @@
 
 #define TIMEBACKLIGHT 5000
 #define TIMELONGPRESS 2500
+#define TIMEINFCT     8000
 
 
 #define CENTER(ELEMENT) ((NBCHAR_X - strlen(ELEMENT)) / 2) * NB_PIX_X
@@ -48,8 +49,8 @@ class LCD4884
         void turnBacklightOn(bool switchOn);
         void writeByte(unsigned char data, unsigned char dataType);
         void drawBmpPixel(unsigned char x, unsigned char y, unsigned char *map, unsigned char pixelX, unsigned char pixelY);
-        void writeString(unsigned char x, unsigned char y, char *s, char mode);
-        void writeStringBig(unsigned char x, unsigned char y, char* string, char mode);
+        void writeString(unsigned char x, unsigned char y, const char *s, char mode);
+        void writeStringBig(unsigned char x, unsigned char y, const char *string, char mode);
         void writeCharBig(unsigned char x, unsigned char y, unsigned char ch, char mode);
         void writeChar(unsigned char c, char mode);
         void setCursorPosition(unsigned char x, unsigned char y);
@@ -59,12 +60,12 @@ class LCD4884
         void waitOKkey(void);
         void updateButtonStatus(void);
         char getKey(unsigned int input);
-        
+
         bool getLongPress();
 
-        void initClass(char *name, int maxElements, int minElements = 0);
-        void showMenu(char menuList[][NBCHAR_X]);
-        void browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction);
+        void initClass(const char *name, int maxElements, int minElements = 0);
+        void showMenu(const char menuList[][NBCHAR_X]);
+        void browseMenu(const char menuList[][NBCHAR_X], FONCTION *menuFunction);
 
         ~LCD4884();
 
