@@ -15,11 +15,14 @@ LCD4884::LCD4884()
     longPress = false;
 };
 
+
 LCD4884::~LCD4884()
 {}
 
 
+
 LCD4884 lcd;
+
 
 
 void LCD4884::turnBacklightOn(bool switchOn)
@@ -179,7 +182,7 @@ void LCD4884::clear(void)
 }
 
 
-void LCD4884::writeString(unsigned char X, unsigned char Y, char* s, char mode)
+void LCD4884::writeString(unsigned char X, unsigned char Y, const char *s, char mode)
 {
     setCursorPosition(X, Y);
 
@@ -191,7 +194,7 @@ void LCD4884::writeString(unsigned char X, unsigned char Y, char* s, char mode)
 }
 
 
-void LCD4884::writeStringBig(unsigned char x, unsigned char y, char* string, char mode)
+void LCD4884::writeStringBig(unsigned char x, unsigned char y, const char *string, char mode)
 {
     while(*string)
     {
@@ -307,7 +310,7 @@ bool LCD4884::getLongPress()
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-void LCD4884::initClass(char *name, int maxElements, int minElements)
+void LCD4884::initClass(const char *name, int maxElements, int minElements)
 {
     lcd.init();
     lcd.clear();
@@ -322,12 +325,12 @@ void LCD4884::initClass(char *name, int maxElements, int minElements)
 }
 
 
-void LCD4884::showMenu(char menuList[][NBCHAR_X])
+void LCD4884::showMenu(const char menuList[][NBCHAR_X])
 {
     clear();
     writeString(CENTER(menuName), 0, menuName, MENU_NORMAL);
 
-    for(short int i = 0; i <= max_menu_item - min_menu_item; i++)
+    for(short int i = 0; i <= max_menu_item - min_menu_item ; i++)
     {
         writeString(CENTER(menuList[i]), OFFSET_Y + i, menuList[i], MENU_NORMAL);
     }
@@ -336,9 +339,11 @@ void LCD4884::showMenu(char menuList[][NBCHAR_X])
 }
 
 
-void LCD4884::browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction)
+void LCD4884::browseMenu(const char menuList[][NBCHAR_X], FONCTION *menuFunction)
 {
     static unsigned long int timer = 0;
+
+    longPress = false;
 
     updateButtonStatus();
 
@@ -411,10 +416,23 @@ void LCD4884::browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction)
                     if(millis() - timer < TIMELONGPRESS)
                     {
                         clear();
+                        lcd.writeString(CENTER("OK"), 5, "OK", MENU_HIGHLIGHT);
 
                         (*menuFunction[current_menu_item])();
 
-                        waitOKkey();
+                        timer = millis();
+                        button_status[CENTER_KEY] = 0;
+
+                        do
+                        {
+                            updateButtonStatus();
+
+                        } while(button_status[CENTER_KEY] == 0 && millis() - timer < TIMEINFCT);
+
+                        if(button_status[CENTER_KEY] != 0)
+                        {
+                            timer = millis();
+                        }
                         
                         showMenu(menuList);
                         i = NUM_KEYS;
@@ -423,9 +441,8 @@ void LCD4884::browseMenu(char menuList[][NBCHAR_X], FONCTION *menuFunction)
                     else
                     {
                         longPress = true;
+                        timer = millis();
                     }
-
-                    timer = millis();
                     break;
 
                 default:
