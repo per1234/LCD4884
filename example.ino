@@ -6,7 +6,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 #define NUM_MENU_ITEM  4
 
-char menuList[NUM_MENU_ITEM][NBCHAR_X] = {
+const char menuList[NUM_MENU_ITEM][NBCHAR_X] = {
 "fct1",
 "fct2",
 "fct3",
@@ -18,7 +18,7 @@ void fct3(void);
 void fct4(void);
 FONCTION menuFunction[NUM_MENU_ITEM] = {fct1, fct2, fct3, fct4};
 
-char *projectName = "Uniwav:";
+const char *projectName = "Uniwav:";
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
