@@ -8,7 +8,7 @@ Library for LCD4884 shield - Arduino
 ### How to use it
 
 
-Please consider starting write down your information in the header of the example.  
+Please consider starting write down your information in the header like in the example.  
 Now, complete the body of functions declared at the bottom, with the content you wish.  
 When you'll choose the entry in the menu, this content will be executed.  
 
