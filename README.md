@@ -28,10 +28,10 @@ To browse menu with the buttons:
 You can use also these methods:
 
 ```turnBacklightOn(true / false)```  
-```writeString(posX, posY, string, MENU_NORMAL / MENU_HIGHLIGHT)```  
-```writeStringBig(posX, posY, string[digit], MENU_NORMAL / MENU_HIGHLIGHT)```  
+```writeString(posX, posY, const char*, MENU_NORMAL / MENU_HIGHLIGHT)```  
+```writeStringBig(posX, posY, const char*, MENU_NORMAL / MENU_HIGHLIGHT)```  
 ```writeChar(posX, posY, char, MENU_NORMAL / MENU_HIGHLIGHT)```  
-```writeCharBig(posX, posY, char[digit], MENU_NORMAL / MENU_HIGHLIGHT)```  
+```writeCharBig(posX, posY, char, MENU_NORMAL / MENU_HIGHLIGHT)```  
 ```clear(void) ```  
 ```init(void) ``` (to initialize the screen without menu or buttons operation)
 
@@ -41,4 +41,4 @@ You can use also these methods:
 
 ## Notes
 * With this configuration, you have the Name of your project written centered at the top of the screen, and access to 4 submenus.
-* Wanna use a long press on *CENTER_KEY* ? Use ```getLongPress() ``` to reach the status of last pression.
+* Wanna use a long press on *CENTER_KEY* ? Use the return value (_bool_) of ```getLongPress() ``` to reach the status of last pression.
