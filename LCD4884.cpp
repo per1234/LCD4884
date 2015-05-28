@@ -300,7 +300,7 @@ void LCD4884::updateButtonStatus(void)
 }
 
 
-bool LCD4884::getLongPress()
+bool LCD4884::getLongPress(void)
 {
     return longPress;
 }
