@@ -111,7 +111,7 @@ void LCD4884::writeCharBig(unsigned char x, unsigned char y, unsigned char ch, c
     unsigned char *pFont;
     unsigned char ch_dat;
 
-    pFont = (unsigned char*) big_number;
+    pFont = (unsigned char*)big_number;
 
     if(ch == '.')
     {
@@ -152,7 +152,7 @@ void LCD4884::writeChar(unsigned char c, char mode)
     unsigned char *pFont;
     byte ch;
 
-    pFont = (unsigned char*) font6_8;
+    pFont = (unsigned char*)font6_8;
     c -= 32;
 
     for(line = 0; line < 6; line++)
@@ -303,6 +303,11 @@ void LCD4884::updateButtonStatus(void)
 bool LCD4884::getLongPress(void)
 {
     return longPress;
+}
+
+short int* LCD4884::getButtonFlag(void)
+{
+    return button_flag;
 }
 
 
