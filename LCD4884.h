@@ -62,6 +62,7 @@ class LCD4884
         char getKey(unsigned int input);
 
         bool getLongPress(void);
+        short int* getButtonFlag(void);
 
         void initClass(const char *name, int maxElements, int minElements = 0);
         void showMenu(const char menuList[][NBCHAR_X]);
