@@ -17,12 +17,20 @@
 #define DEBOUNCE_MAX  15
 #define DEBOUNCE_ON   10
 #define DEBOUNCE_OFF   3
-#define NUM_KEYS       5    /* Analogic Values measured [=1023 when released] */
-#define LEFT_KEY       0    //842
-#define CENTER_KEY     1    //143
-#define DOWN_KEY       2    //0
-#define RIGHT_KEY      3    //328
-#define UP_KEY         4    //502
+#define NUM_KEYS       5
+
+#define LEFT_KEY       0
+#define CENTER_KEY     1
+#define DOWN_KEY       2
+#define RIGHT_KEY      3
+#define UP_KEY         4
+
+#define LEFT_K_A    842
+#define CENTER_K_A  143
+#define DOWN_K_A      0
+#define RIGHT_K_A   328
+#define UP_K_A      502
+#define K_RELEAS_A 1023
 
 #define NBCHAR_X      14
 #define OFFSET_Y       2
@@ -62,7 +70,6 @@ class LCD4884
         char getKey(unsigned int input);
 
         bool getLongPress(void);
-        short int* getButtonFlag(void);
 
         void initClass(const char *name, int maxElements, int minElements = 0);
         void showMenu(const char menuList[][NBCHAR_X]);
