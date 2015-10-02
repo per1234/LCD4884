@@ -42,4 +42,4 @@ You can use also these methods:
 ## Notes
 * With this configuration, you have the Name of your project written centered at the top of the screen, and access to 4 submenus.
 * Wanna use a long press on *CENTER_KEY* ? Use the return value (_bool_) of ```getLongPress() ``` to reach the status of last pression.
-* Wanna use the values of *button_flag* ? Use the return value (_short int*_) of ```getButtonFlag() ``` to reach the array which contains the buttons states.
+* Wanna use the status of joystick's buttons in your own code ? Compare the return value ```int(analogRead(0))) ``` with ```LEFT_K_A ```, ```CENTER_K_A ```, ```DOWN_K_A ```, ```RIGHT_K_A ```, ```UP_K_A ```, ```K_RELEAS_A ```, the analogic values returned by the joystick.
