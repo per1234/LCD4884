@@ -25,12 +25,12 @@
 #define RIGHT_KEY      3
 #define UP_KEY         4
 
-#define LEFT_K_A    842
+#define LEFT_K_A    741
 #define CENTER_K_A  143
 #define DOWN_K_A      0
 #define RIGHT_K_A   328
 #define UP_K_A      502
-#define K_RELEAS_A 1023
+#define K_RELEAS_A 1022
 
 #define NBCHAR_X      14
 #define OFFSET_Y       2
